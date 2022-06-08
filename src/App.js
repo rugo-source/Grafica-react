@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import {Pie} from 'react-chartjs-2';
+
+
+const data={
+  type: 'bar',
+  label:['Google','Bing','Baidu','Otros'],
+  datasets:[{
+    data:[74.56,10.54,9.42,5.42],
+    backgroundColor:['#FF0000','blue','green','#FF0000']
+  }]
+};
+const opciones={
+  responsive: true
+}
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Pie data={data} options={opciones}/>
     </div>
   );
 }
